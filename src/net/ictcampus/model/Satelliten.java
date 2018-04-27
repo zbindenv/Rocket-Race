@@ -1,5 +1,5 @@
 package net.ictcampus.model;
 
-public class Satelliten {
+public class Satelliten extends Hindernis{
 
 }
