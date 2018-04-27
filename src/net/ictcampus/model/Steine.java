@@ -1,5 +1,5 @@
 package net.ictcampus.model;
 
-public class Steine {
+public class Steine extends Hindernis{
 
 }
