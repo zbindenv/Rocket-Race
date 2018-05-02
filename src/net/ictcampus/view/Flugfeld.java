@@ -1,31 +1,37 @@
 package net.ictcampus.view;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+<<<<<<< HEAD
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+=======
+>>>>>>> 09b6fcd79d359d62cce599595054514bc182051d
 import javax.swing.JPanel;
-
-import net.ictcampus.model.Rakete;
 
 public class Flugfeld extends JPanel{
 	
-	Rakete r1 = new Rakete(0);
+	private BufferedImage image;
 	
 	public Flugfeld() {
+		
+		try {                
+	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/back1.jpg"));
+	       } catch (IOException ex) {
+	            System.out.println(ex.getMessage());
+	            System.out.println("Test");
+	       }
 		
 	}
 
 	
 	protected void paintComponent(Graphics g) {
-		BufferedImage img = new BufferedImage(600, 800, BufferedImage.TYPE_INT_ARGB);
-		g.drawImage(img,0,0,null);
-		g.setColor(Color.BLACK);
+		super.paintComponent(g);
+		g.drawImage(image,0,0,null);
 	}	
 }
