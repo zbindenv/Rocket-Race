@@ -6,22 +6,19 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-<<<<<<< HEAD
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-=======
->>>>>>> 09b6fcd79d359d62cce599595054514bc182051d
 import javax.swing.JPanel;
+
+import net.ictcampus.model.Rakete;
 
 public class Flugfeld extends JPanel{
 	
 	private BufferedImage image;
+	private Rakete rakete;
 	
-	public Flugfeld() {
-		
+	public Flugfeld(Rakete r) {
+		rakete = r;
 		try {                
-	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/back1.jpg"));
+	          image = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/back1.jpg"));
 	       } catch (IOException ex) {
 	            System.out.println(ex.getMessage());
 	            System.out.println("Test");
@@ -33,5 +30,6 @@ public class Flugfeld extends JPanel{
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(image,0,0,null);
+		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),null);
 	}	
 }
