@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import net.ictcampus.model.Rakete;
+
 public class Spielfeld extends JFrame {
 
 	private Flugfeld ff = new Flugfeld();
@@ -23,6 +25,7 @@ public class Spielfeld extends JFrame {
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel("100");
 	private JTextField text2 = new JTextField("Rocket Race");
+	private Rakete r1 = new Rakete(1);
 
 	
 	public Spielfeld() {
