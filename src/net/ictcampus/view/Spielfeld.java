@@ -1,6 +1,7 @@
 package net.ictcampus.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -45,8 +46,15 @@ public class Spielfeld extends JFrame {
 //			System.exit(1);
 //		}
 		//Spielfeld.add(new JLabel(new ImageIcon(image)));
+		
+		ff.setLayout(new GridLayout());
+
+		
+				
 		add(navigation, BorderLayout.SOUTH);
 		add(ff, BorderLayout.CENTER);
+		
+		
 		//starteSpiel.addActionListener();
 
 	}
