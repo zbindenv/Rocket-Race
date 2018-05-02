@@ -40,18 +40,10 @@ public class Spielfeld extends JFrame {
 		navigation.add(text2);
 		navigation.add(starteSpiel);
 		navigation.add(text);
-//		BufferedImage image = null;
-//		try {
-//			BufferedImage image = ImageIO.read(imageFile);
-//		}
-//		catch(IOException ioex) {
-//			//abort
-//			System.exit(1);
-//		}
-		//Spielfeld.add(new JLabel(new ImageIcon(image)));
 		
-		ff.setLayout(new GridLayout());
-
+		ff.setLayout(null);
+		
+		ff.add(r1);
 		
 				
 		add(navigation, BorderLayout.SOUTH);
