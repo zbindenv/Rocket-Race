@@ -2,17 +2,13 @@ package net.ictcampus.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.imageio.*;
 
 public class Spielfeld extends JFrame {
 
@@ -22,12 +18,12 @@ public class Spielfeld extends JFrame {
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel("100");
 	private JTextField text2 = new JTextField("Rocket Race");
+	private JPanel viereck = new JPanel();
 
 	
 	public Spielfeld() {
 		super("Rocket Race");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		File imageFile = new File("C:/Bilder/bild.jpg");
 		
 		starteSpiel.setSize(200,50);
 		text.setSize(200,50);
@@ -36,20 +32,13 @@ public class Spielfeld extends JFrame {
 		navigation.add(text2);
 		navigation.add(starteSpiel);
 		navigation.add(text);
-//		BufferedImage image = null;
-//		try {
-//			BufferedImage image = ImageIO.read(imageFile);
-//		}
-//		catch(IOException ioex) {
-//			//abort
-//			System.exit(1);
-//		}
-		//Spielfeld.add(new JLabel(new ImageIcon(image)));
 		add(navigation, BorderLayout.SOUTH);
+		add(viereck, 10, 10);
 		//starteSpiel.addActionListener();
+		
 
 	}
-		
+	
 	
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
