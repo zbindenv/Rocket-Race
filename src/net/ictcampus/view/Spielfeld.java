@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 
 public class Spielfeld extends JFrame {
 
-	
+	private Flugfeld ff = new Flugfeld();
 	private JFrame Spielfeld = new JFrame();
 	private JPanel navigation = new JPanel();
 	private JButton starteSpiel = new JButton("Start");
@@ -46,6 +46,7 @@ public class Spielfeld extends JFrame {
 //		}
 		//Spielfeld.add(new JLabel(new ImageIcon(image)));
 		add(navigation, BorderLayout.SOUTH);
+		add(ff, BorderLayout.CENTER);
 		//starteSpiel.addActionListener();
 
 	}
