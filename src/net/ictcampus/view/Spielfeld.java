@@ -3,35 +3,33 @@ package net.ictcampus.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.imageio.*;
 
 import net.ictcampus.model.Rakete;
 
 public class Spielfeld extends JFrame {
 
-	private Flugfeld ff = new Flugfeld();
+	private Flugfeld ff;
 	private JFrame Spielfeld = new JFrame();
 	private JPanel navigation = new JPanel();
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel("100");
 	private JTextField text2 = new JTextField("Rocket Race");
-	private Rakete r1 = new Rakete(1);
+
+	private JPanel viereck = new JPanel();
+	private Rakete r1 = new Rakete(1,300, 600);
+
 
 	
 	public Spielfeld() {
 		super("Rocket Race");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		File imageFile = new File("C:/Bilder/bild.jpg");
 		
 		starteSpiel.setSize(200,50);
 		text.setSize(200,50);
@@ -40,20 +38,21 @@ public class Spielfeld extends JFrame {
 		navigation.add(text2);
 		navigation.add(starteSpiel);
 		navigation.add(text);
-		
-		ff.setLayout(null);
-		
-		ff.add(r1);
-		
-				
+
 		add(navigation, BorderLayout.SOUTH);
+		r1.setxPos(300);
+		r1.setyPos(400);
+		ff =  new Flugfeld(r1);
+		ff.setLayout(new GridLayout());
+		
 		add(ff, BorderLayout.CENTER);
+//		viereck.add(new JButton("Hello!"));
+//		viereck.setLocation(150, 150);
+//		ff.add(viereck);
 		
-		
-		//starteSpiel.addActionListener();
 
 	}
-		
+	
 	
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();

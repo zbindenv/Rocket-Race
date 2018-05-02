@@ -15,8 +15,11 @@ public class Rakete extends JPanel{
 	private int yPos;
 	private BufferedImage rocket;
 
-	public Rakete(int speed){
+
+	public Rakete(int speed, int xPos, int yPos){
 	this.speed = speed;
+	this.xPos = xPos;
+	this.yPos = yPos;
 		
 	try {                
         rocket = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/rakete.png"));
@@ -54,5 +57,13 @@ public class Rakete extends JPanel{
 
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
+	}
+
+	public BufferedImage getRocket() {
+		return rocket;
+	}
+
+	public void setRocket(BufferedImage rocket) {
+		this.rocket = rocket;
 	}
 }
