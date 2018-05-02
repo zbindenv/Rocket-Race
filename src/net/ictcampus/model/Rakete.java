@@ -1,15 +1,17 @@
 package net.ictcampus.model;
 
-public class Rakete {
+import javax.swing.JPanel;
+
+public class Rakete extends JPanel{
 	
 	private int speed;
 	private int xPos;
 	private int yPos;
 	
 
-	public Rakete(int speed) {
+	public Rakete(int speed){
 	this.speed = speed;
-	
+		
 		
 		
 	}
