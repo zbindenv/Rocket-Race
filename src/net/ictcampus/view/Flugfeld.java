@@ -25,8 +25,15 @@ public class Flugfeld extends JPanel{
 	       }
 		
 	}
-
 	
+	public Rakete getRakete() {
+		return rakete;
+	}
+
+	public void setRakete(Rakete rakete) {
+		this.rakete = rakete;
+	}
+
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(image,0,0,null);

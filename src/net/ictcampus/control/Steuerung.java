@@ -1,28 +1,29 @@
 package net.ictcampus.control;
 
 import java.awt.event.KeyEvent;
+import java.util.Set;
+
+import net.ictcampus.view.Spielfeld;
 
 public class Steuerung {
 	
+	Spielfeld spiel;
+	
+	public Steuerung(Spielfeld s) {
+		spiel = s;
+	}
 	public void keyPressed(KeyEvent e) {
 
 	    int key = e.getKeyCode();
 	    
 	    
 	    if (key == KeyEvent.VK_LEFT) {
-	        System.out.println("links");
+	        spiel.left = true;
 	    }
 
 	    if (key == KeyEvent.VK_RIGHT) {
-	        //dx = 1;
+	        spiel.right = true;
 	    }
 
-	    if (key == KeyEvent.VK_UP) {
-	        //dy = -1;
-	    }
-
-	    if (key == KeyEvent.VK_DOWN) {
-	        //dy = 1;
-	    }
 	}
 }
