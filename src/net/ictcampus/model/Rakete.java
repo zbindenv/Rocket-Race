@@ -9,33 +9,34 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Rakete extends JPanel{
-	
+	//Instanzvariabeln
 	private int speed;
 	private int xPos;
 	private int yPos;
 	private BufferedImage rocket;
 
+	//Konstruktor
+	public Rakete(int speed, int xPos, int yPos){
+	this.speed = speed;
+	this.xPos = xPos;
+	this.yPos = yPos;
 
-	public Rakete(int speed,int xPos,int yPos){
-		this.xPos=xPos;
-		this.yPos=yPos;
-		this.speed = speed;
-		
+	//fügt das Bild ein, wenn die URL stimmt, sonst wird die Errormessage ausgegeben	
 	try {                
-        rocket = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/rakete.png"));
+        rocket = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/rakete.png"));
      } catch (IOException ex) {
           System.out.println(ex.getMessage());
-          System.out.println("Test");
      }
 		
 	}
-	
+
+	//Bild wird hinzugefügt
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		//g.drawImage(rocket,xPos,yPos,null);
 		repaint();
 	}	
 	
+	//Getters und Setters
 	public int getSpeed() {
 		return speed;
 	}
