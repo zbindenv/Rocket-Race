@@ -25,7 +25,7 @@ public class Hindernis extends JPanel{
 		//Wenn die Nr unter 20 ist wid es ein Meteorit
 		if(bildnr <=20) {
 			try {                
-		          stone = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/stone.png"));
+		          stone = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/stone.png"));
 		       } catch (IOException ex) {
 		            System.out.println(ex.getMessage());
 		       }
@@ -33,7 +33,7 @@ public class Hindernis extends JPanel{
 		//Wenn die Nummer zwischen 20 und 26 ist wird es ein Satellit
 		else if(bildnr >= 21 && bildnr <=25) {
 			try {                
-		          stone = ImageIO.read(new File("C:\\Users\\weilenmannj\\RocketRace\\Rocket-Race\\src\\net\\ictcampus\\view\\satellite.png"));
+		          stone = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/satellite.png"));
 		       } catch (IOException ex) {
 		            System.out.println(ex.getMessage());
 		       }

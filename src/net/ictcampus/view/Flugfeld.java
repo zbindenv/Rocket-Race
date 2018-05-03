@@ -22,7 +22,7 @@ public class Flugfeld extends JPanel{
 	    rakete = r;
 		hindernis = s;
 		try {
-	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
+	          image = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
 	       } catch (IOException ex) {
 	            System.out.println(ex.getMessage());
 	       }

@@ -2,6 +2,8 @@ package net.ictcampus.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,6 +11,7 @@ import javax.swing.JPanel;
 
 
 import net.ictcampus.control.Game;
+import net.ictcampus.control.ButtonListener;
 import net.ictcampus.model.Hindernis;
 import net.ictcampus.control.Steuerung;
 import net.ictcampus.model.Rakete;
@@ -19,18 +22,20 @@ public class Spielfeld extends JFrame {
 	private JFrame Spielfeld = new JFrame();
 	private JPanel navigation = new JPanel();
 	private JButton starteSpiel = new JButton("Start");
-	private JLabel text = new JLabel("");
+	private JLabel text = new JLabel();
 	private JLabel text2 = new JLabel("Rocket Race");
-
+	
 	private Rakete r1=new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
 	public Hindernis s1 = new Hindernis(23, 300 , 0);
 	
+	
 	//Konstruktor
 	public Spielfeld() {
 		super("Rocket Race");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		starteSpiel.addActionListener(new ButtonListener(this));
 		
 		starteSpiel.setSize(200,50);				//der Button bekommt eine grösse
 		text.setSize(200,50);						//text bekommt grösse
@@ -49,6 +54,7 @@ public class Spielfeld extends JFrame {
 		Steuerung ki = new Steuerung(this,r1);		//Steuerung
         addKeyListener(ki);
         setFocusable(true);
+        System.out.println("sdadsad");
 
 		
 		add(ff, BorderLayout.CENTER);				//Das Flugfeld ins Center gesetzt

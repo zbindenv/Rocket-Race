@@ -19,10 +19,15 @@ public class Steuerung implements KeyListener{
 	
 
 	}
+
+	public Steuerung(Spielfeld spiel) {
+		this.spiel= spiel;
+	}
+	
     public void actionPerformed (ActionEvent ae){
-        //if(ae.getSource() == spiel.getStarteSpiel()){
-//        	.setText(("Button 1 wurde betätigt"));
-        	
+        if(ae.getSource() == spiel.getStarteSpiel()){
+        	spiel.getText().setText("adad");
+        }
         }
 	
 	public void keyPressed(KeyEvent e) {
