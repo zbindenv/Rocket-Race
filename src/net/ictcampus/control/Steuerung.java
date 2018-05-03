@@ -15,12 +15,12 @@ public class Steuerung implements KeyListener{
 	public Steuerung(Spielfeld s,Rakete r) {
 		this.r=r;
 		spiel = s;
-		System.out.println("AUES HUERESÖHN");
+	
 
 	}
 	public void keyPressed(KeyEvent e) {
 	    
-	    if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+	    if (e.getKeyCode() == KeyEvent.VK_LEFT){
 	        spiel.left = true;
 	    }
 
