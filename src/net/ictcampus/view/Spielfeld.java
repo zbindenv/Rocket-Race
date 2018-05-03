@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.imageio.*;
 
 import net.ictcampus.control.Game;
+import net.ictcampus.control.Steuerung;
 import net.ictcampus.model.Rakete;
 
 public class Spielfeld extends JFrame {
@@ -22,7 +23,7 @@ public class Spielfeld extends JFrame {
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel("100");
 	private JLabel text2 = new JLabel("Rocket Race");
-	private Rakete r1 = new Rakete(1);
+	private Rakete r1=new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
 	
@@ -45,6 +46,9 @@ public class Spielfeld extends JFrame {
 		r1.setyPos(300);
 		ff =  new Flugfeld(r1);
 		ff.setLayout(new GridLayout());
+		Steuerung ki = new Steuerung(this,r1);
+        addKeyListener(ki);
+        setFocusable(true);
 		
 		add(ff, BorderLayout.CENTER);
 
@@ -56,6 +60,26 @@ public class Spielfeld extends JFrame {
 	}
 
 
+	public boolean isLeft() {
+		return left;
+	}
+
+
+	public void setLeft(boolean left) {
+		this.left = left;
+	}
+
+
+	public boolean isRight() {
+		return right;
+	}
+
+
+	public void setRight(boolean right) {
+		this.right = right;
+	}
+
+
 	public void setR1(Rakete r1) {
 		this.r1 = r1;
 	}
@@ -63,7 +87,7 @@ public class Spielfeld extends JFrame {
 
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
-		Game g = new Game();
+		Game g = new Game(feld.r1,feld.ff,feld);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
 		g.play();	

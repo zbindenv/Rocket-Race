@@ -16,8 +16,10 @@ public class Rakete extends JPanel{
 	private BufferedImage rocket;
 
 
-	public Rakete(int speed){
-	this.speed = speed;
+	public Rakete(int speed,int xPos,int yPos){
+		this.xPos=xPos;
+		this.yPos=yPos;
+		this.speed = speed;
 		
 	try {                
         rocket = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/rakete.png"));
@@ -30,7 +32,8 @@ public class Rakete extends JPanel{
 	
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(rocket,0,0,null);
+		//g.drawImage(rocket,xPos,yPos,null);
+		repaint();
 	}	
 	
 	public int getSpeed() {
