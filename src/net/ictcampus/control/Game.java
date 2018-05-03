@@ -5,23 +5,24 @@ import net.ictcampus.view.Flugfeld;
 import net.ictcampus.view.Spielfeld;
 
 public class Game {
+	
+	private int zaehleScore;
 	Rakete rakete;
 	Flugfeld flug;
 	Spielfeld s;
+	
 	public Game(Rakete r1, Flugfeld ff, Spielfeld spiel) {
+	
 		rakete=r1;
 		flug=ff;
 		s=spiel;
 		
 	}
-
-	private int zaehleScore;
-	
 	
 	public void zaehleScore() {
-		//if()
 		
 		for(int i = 0; i < 1000; i++) {
+			System.out.println("");
 			
 		}
 	}
@@ -30,10 +31,8 @@ public class Game {
 		while(true) {
 			System.out.println(""); //MUUUUSSS HIER BLEIBEN AMK
 			if(s.left) {
-				System.out.println(rakete.getxPos());
 				rakete.setxPos(rakete.getxPos() -10);
 				flug.repaint();
-				System.out.println("links");
 				s.setLeft(false);
 			}
 			if(s.right) {

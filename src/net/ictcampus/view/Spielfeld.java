@@ -1,15 +1,12 @@
 package net.ictcampus.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.imageio.*;
+
 
 import net.ictcampus.control.Game;
 import net.ictcampus.control.Steuerung;
@@ -21,9 +18,9 @@ public class Spielfeld extends JFrame {
 	private JFrame Spielfeld = new JFrame();
 	private JPanel navigation = new JPanel();
 	private JButton starteSpiel = new JButton("Start");
-	private JLabel text = new JLabel("100");
+	private JLabel text = new JLabel("");
 	private JLabel text2 = new JLabel("Rocket Race");
-	private Rakete r1=new Rakete(1,50,50);
+	private Rakete r1 = new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
 	
@@ -84,7 +81,24 @@ public class Spielfeld extends JFrame {
 		this.r1 = r1;
 	}
 
+	public JLabel getText() {
+		return text;
+	}
+	
+	
+	public void setText(JLabel text) {
+		this.text = text;
+	}
 
+	public JButton getStarteSpiel() {
+		return starteSpiel;
+	}
+	
+	
+	public void setStarteSpiel(JButton starteSpiel) {
+		this.starteSpiel = starteSpiel;
+	}
+	
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
 		Game g = new Game(feld.r1,feld.ff,feld);

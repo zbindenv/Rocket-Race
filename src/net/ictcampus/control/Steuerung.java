@@ -15,7 +15,7 @@ public class Steuerung implements KeyListener{
 	public Steuerung(Spielfeld s,Rakete r) {
 		this.r=r;
 		spiel = s;
-		System.out.println("AUES HUERESÖHN");
+	
 
 	}
 	public void keyPressed(KeyEvent e) {
