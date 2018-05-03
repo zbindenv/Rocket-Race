@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.imageio.*;
 
 import net.ictcampus.control.Game;
+import net.ictcampus.model.Hindernis;
 import net.ictcampus.model.Rakete;
 
 public class Spielfeld extends JFrame {
@@ -25,7 +26,7 @@ public class Spielfeld extends JFrame {
 	private Rakete r1 = new Rakete(1,0,0);
 	public boolean left = false;
 	public boolean right = false;
-	
+	public Hindernis s1 = new Hindernis(23, 300 , 0);
 	
 	public Spielfeld() {
 		super("Rocket Race");
@@ -44,10 +45,12 @@ public class Spielfeld extends JFrame {
 		r1.setxPos(300);
 		r1.setyPos(400);
 
-		ff =  new Flugfeld(r1);
+		ff =  new Flugfeld(r1,s1);
 		
 		add(ff, BorderLayout.CENTER);
-
+		
+		
+		
 	}
 	
 	
@@ -66,7 +69,7 @@ public class Spielfeld extends JFrame {
 		Game g = new Game();
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		g.play();	
+		//g.play();	
 	}
 		
 		
