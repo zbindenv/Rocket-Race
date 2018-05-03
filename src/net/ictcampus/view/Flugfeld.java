@@ -12,24 +12,32 @@ import net.ictcampus.model.Hindernis;
 import net.ictcampus.model.Rakete;
 
 public class Flugfeld extends JPanel{
-	
+	//Instanzvariabeln
 	private BufferedImage image;
 	private Rakete rakete;
-	
-
 	private Hindernis hindernis;
 	
+	//Konstruktor
 	public Flugfeld(Rakete r, Hindernis s) {
-		rakete = r;
+	    rakete = r;
 		hindernis = s;
-		try {                
-	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/back1.jpg"));
+		try {
+	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
 	       } catch (IOException ex) {
 	            System.out.println(ex.getMessage());
 	       }
 		
 	}
-	
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		g.drawImage(image,0,0,null); 														//Zeichnet HinterGrundbild
+		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),null); 			//Zeichnet Rakete
+		g.drawImage(hindernis.getHindernis(),hindernis.getxPos(),hindernis.getyPos(),null);
+		repaint();
+
+	}	
+	//Getters Setters
 	public Rakete getRakete() {
 		return rakete;
 	}
@@ -46,13 +54,5 @@ public class Flugfeld extends JPanel{
 		this.hindernis = hindernis;
 	}
 
-	protected void paintComponent(Graphics g) {
-		super.paintComponent(g);
 
-		g.drawImage(image,0,0,null); //Zeichnet HinterGrundbild
-		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),null); //Zeichnet Rakete
-		g.drawImage(hindernis.getHindernis(),hindernis.getxPos(),hindernis.getyPos(),null);
-		repaint();
-
-	}	
 }
