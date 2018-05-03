@@ -1,5 +1,7 @@
 package net.ictcampus.control;
 
+import javax.swing.JLabel;
+
 import net.ictcampus.model.Rakete;
 import net.ictcampus.view.Flugfeld;
 import net.ictcampus.view.Spielfeld;
@@ -12,6 +14,8 @@ public class Game {
 	Flugfeld flug;
 	Spielfeld s;
 	
+	
+	
 	//Konstruktor
 	public Game(Rakete r1, Flugfeld ff, Spielfeld spiel) {
 	
@@ -23,17 +27,18 @@ public class Game {
 	
 	//Zählt die Punkte
 	public void zaehleScore() {
+
+		System.out.println(s.getText());
 		
-		for(int i = 0; i < 1000; i++) {
-			System.out.println("");
-			
-		}
+		
+		
 	}
 	
 	//Spielablauf
 	public void play() {
 		while(true) {
-			System.out.println(""); //MUUUUSSS HIER BLEIBEN AMK
+			
+			System.out.println(""); //MUSSS HIER BLEIBEN AMK
 			if(s.left) {
 				if(rakete.getxPos() >= 3) {
 					rakete.setxPos(rakete.getxPos() -10);
@@ -50,5 +55,4 @@ public class Game {
 			}
 		}
 	}
-	
 }

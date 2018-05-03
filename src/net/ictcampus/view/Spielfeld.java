@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 
 import net.ictcampus.control.Game;
+import net.ictcampus.control.HindernisseFallen;
 import net.ictcampus.model.Hindernis;
 import net.ictcampus.control.Steuerung;
 import net.ictcampus.model.Rakete;
@@ -16,7 +17,7 @@ import net.ictcampus.model.Rakete;
 public class Spielfeld extends JFrame {
 	//Instanzvariabeln
 	private Flugfeld ff;
-	private JFrame Spielfeld = new JFrame();
+    private JFrame Spielfeld = new JFrame();
 	private JPanel navigation = new JPanel();
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel("");
@@ -25,7 +26,9 @@ public class Spielfeld extends JFrame {
 	private Rakete r1=new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
-	public Hindernis s1 = new Hindernis(23, 300 , 0);
+	public Hindernis s1 = new Hindernis(3, 300 , 0);
+	
+	
 	
 	//Konstruktor
 	public Spielfeld() {
@@ -56,13 +59,14 @@ public class Spielfeld extends JFrame {
 		
 		
 	}
-	
+
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
-		Game g = new Game(feld.r1,feld.ff,feld);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		g.play();	
+		Game g = new Game(feld.r1,feld.ff,feld);
+		HindernisseFallen f = new HindernisseFallen(g, true,feld.r1,feld.ff,feld);
+		f.start();
 	}
 	
 	//Getters und Setters
@@ -95,13 +99,13 @@ public class Spielfeld extends JFrame {
 		this.r1 = r1;
 	}
 
-	public JLabel getText() {
-		return text;
+	public String getText() {
+		return text.getText();
 	}
 	
 	
-	public void setText(JLabel text) {
-		this.text = text;
+	public void setText(String text) {
+		this.text.setText(text);
 	}
 
 	public JButton getStarteSpiel() {
