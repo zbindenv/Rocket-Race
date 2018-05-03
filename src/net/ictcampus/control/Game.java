@@ -1,7 +1,5 @@
 package net.ictcampus.control;
 
-import javax.swing.JLabel;
-
 import net.ictcampus.model.Rakete;
 import net.ictcampus.view.Flugfeld;
 import net.ictcampus.view.Spielfeld;
