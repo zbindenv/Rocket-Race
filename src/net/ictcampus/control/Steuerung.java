@@ -27,9 +27,8 @@ public class Steuerung implements KeyListener{
 	
     public void actionPerformed (ActionEvent ae){
         if(ae.getSource() == spiel.getStarteSpiel()){
-        	//spiel.getText().setText("adad");
+        	
         	JOptionPane.showMessageDialog(null,"setText");
-//        	spiel.getText().setText("adad");
 
         }
         }
@@ -45,14 +44,13 @@ public class Steuerung implements KeyListener{
 	    }
 
 	}
-	@Override
+
 	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+
 		
 	}
-	@Override
+
 	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
 	}
 }

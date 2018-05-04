@@ -19,19 +19,15 @@ public class ButtonListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
 		
-		//JOptionPane.showMessageDialog(null,"Klickt");
-		//spiel.getText().setText(spiel.getG().timer+"");	
 		spiel.getStarteSpiel().setFocusable(false);
 		spiel.setFocusable(true);
+		
+		spiel.getG().counter(1);
 		
 		spiel.setGestartet(true);
 		spiel.repaint();
 
 	}
-	
-	
-    	//spiel.getText().setText(spiel.getG().timer+"");
-		//spiel.setFocusable(true);
-		
 }

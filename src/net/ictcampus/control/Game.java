@@ -33,21 +33,18 @@ public class Game {
 
 	public void counter(int zaehler) {
 	//	timer = zaehler;
-		System.out.println("adwad");
 
 		timerA = new Timer();
 		TimerTask taskA = new TimerTask() {
 
 			public void run() {
 				if (timer >= 0) {
-					//System.out.println("" + timer);
 					punkte=timer;
 					timer +=1;
 				}
-				if (timer == 100) {
+				if (timer == 20) {
 					System.out.println("Aktion");
 					punkte=timer;
-					//TimerA.cancel();
 				}
 			}
 		};
@@ -58,41 +55,6 @@ public class Game {
 		timerA.cancel();
 	}
 
-	// Zählt die Punkte
-	public void zaehleScore() {
-		System.out.println(s.getText());
-
-	}
-
-	// Spielablauf
-	public void play() {
-		while (true) {
-			System.out.println(""); // MUUUUSSS HIER BLEIBEN AMK
-			if (s.left) {
-				if (rakete.getxPos() >= 3) {
-					rakete.setxPos(rakete.getxPos() - 10);
-
-					while (true) {
-						System.out.println(""); // MUSSS HIER BLEIBEN AMK
-						if (s.left) {
-							if (rakete.getxPos() >= 3) {
-								rakete.setxPos(rakete.getxPos() - 10);
-								flug.repaint();
-								s.setLeft(false);
-							}
-						}
-						if (s.right) {
-							if (rakete.getxPos() < (600 - 60)) {
-								rakete.setxPos(rakete.getxPos() + 10);
-								flug.repaint();
-								s.setRight(false);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 	public int getTimer() {
 		return timer;
 	}

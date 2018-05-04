@@ -35,14 +35,15 @@ public class Spielfeld extends JFrame {
 	}
 
 
-	private Rakete r1=new Rakete(1,50,50,48,251);
+	private Rakete r1=new Rakete(15,50,50,48,251);
 	public boolean left = false;
 	public boolean right = false;
 
-	public Hindernis s1 = new Hindernis(23, 100 , -220,0,0);
-	public Hindernis s2 = new Hindernis(3, 400 , -100,0,0);
-	public Hindernis s3 = new Hindernis(3, 600 , -400,0,0);
-	public Hindernis s4 = new Hindernis(3, 200 , -0,0,0);
+	public Hindernis s1 = new Hindernis(23, 30 , -85-50,0,0);
+	public Hindernis s2 = new Hindernis(3, 140 , -185-600,0,0);
+	public Hindernis s3 = new Hindernis(3, 300 , -185,0,0);
+	public Hindernis s4 = new Hindernis(3, 500 , -185-200,0,0);
+	public Hindernis s5 = new Hindernis(23, 390, -85-400,0,0);
 	public ArrayList<Hindernis> hindernisse = new ArrayList<>();
 	public boolean gestartet = false;
 
@@ -71,13 +72,12 @@ public class Spielfeld extends JFrame {
 		hindernisse.add(s2);
 		hindernisse.add(s3);
 		hindernisse.add(s4);
+		hindernisse.add(s5);
 		ff =  new Flugfeld(r1,hindernisse);			//ein neues Flugfeld mit einem Hindernis und einer Rakete werden erstellt
 		ff.setLayout(new GridLayout());				//Das Flugfeld bekommt ein Layout
 		Steuerung ki = new Steuerung(this,r1);		//Steuerung
         addKeyListener(ki);
         setFocusable(true);
-        System.out.println("sdadsad");
-
 		
 		add(ff, BorderLayout.CENTER);				//Das Flugfeld ins Center gesetzt
 		
@@ -90,18 +90,14 @@ public class Spielfeld extends JFrame {
 		feld.g = new Game(feld.r1,feld.ff,feld);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		feld.g.counter(1);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-//<<<<<<< HEAD
+
 		while(!feld.gestartet) {
 			System.out.print("");
 		}
 		
 		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld);
-//=======
-//		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld, feld.s1);
-//>>>>>>> 54b980aa1b5839541877c8da9b3df6d67b5f5c15
 		f.start();
 	}
 	

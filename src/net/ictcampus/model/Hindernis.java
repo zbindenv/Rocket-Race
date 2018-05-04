@@ -2,12 +2,12 @@ package net.ictcampus.model;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import net.ictcampus.control.Game;
@@ -63,7 +63,10 @@ public class Hindernis extends JPanel{
 	
 	public boolean checkCollision(Rakete r, Game g) {
 		if(( this.getHitbox()).intersects(r.getHitbox())) {
-			System.out.println("Sie sind " +g.getTimer()+" km weit geflogen.");
+			JOptionPane.showMessageDialog(null,"Sie sind " +(g.getTimer()*7.9)+" km weit geflogen.","Sie haben Leider verloren",JOptionPane.OK_OPTION);
+			JOptionPane.showMessageDialog(null,"Diese Kilometerzahl resultiert aus den Sekunden, welche sie geflogen sind und der Geschwindigkeit welche eine Rakete mindestens erreichen muss um von der Erde abheben zu können.(7.9 km/s)\"","Sie haben Leider verloren",JOptionPane.OK_OPTION);
+			System.out.println("Sie sind " +(g.getTimer()*7.9)+" km weit geflogen.");
+			System.out.println("Diese Kilometerzahl resultiert aus den Sekunden, welche sie geflogen sind und der Geschwindigkeit welche eine Rakete mindestens erreichen muss um von der Erde abheben zu können.(7.9 km/s)");
 			return true;
 		}
 		return false;
