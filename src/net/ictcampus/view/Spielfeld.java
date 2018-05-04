@@ -35,15 +35,17 @@ public class Spielfeld extends JFrame {
 	}
 
 
-	private Rakete r1=new Rakete(1,50,50);
+	private Rakete r1=new Rakete(1,50,50,48,251);
 	public boolean left = false;
 	public boolean right = false;
-	public Hindernis s1 = new Hindernis(23, 100 , -220);
-	public Hindernis s2 = new Hindernis(3, 400 , -100);
-	public Hindernis s3 = new Hindernis(3, 600 , -400);
-	public Hindernis s4 = new Hindernis(3, 200 , -0);
+
+	public Hindernis s1 = new Hindernis(23, 100 , -220,0,0);
+	public Hindernis s2 = new Hindernis(3, 400 , -100,0,0);
+	public Hindernis s3 = new Hindernis(3, 600 , -400,0,0);
+	public Hindernis s4 = new Hindernis(3, 200 , -0,0,0);
 	public ArrayList<Hindernis> hindernisse = new ArrayList<>();
 	public boolean gestartet = false;
+
 	
 	
 
@@ -91,11 +93,15 @@ public class Spielfeld extends JFrame {
 		feld.g.counter(1);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
+//<<<<<<< HEAD
 		while(!feld.gestartet) {
-			System.out.println("");
+			System.out.print("");
 		}
 		
 		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld);
+//=======
+//		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld, feld.s1);
+//>>>>>>> 54b980aa1b5839541877c8da9b3df6d67b5f5c15
 		f.start();
 	}
 	
@@ -129,8 +135,8 @@ public class Spielfeld extends JFrame {
 		this.r1 = r1;
 	}
 
-	public String getText() {
-		return text.getText();
+	public JLabel getText() {
+		return text;
 	}
 	
 	
