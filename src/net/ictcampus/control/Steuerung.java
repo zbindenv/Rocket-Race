@@ -2,7 +2,6 @@ package net.ictcampus.control;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Set;
 
 import javax.swing.JOptionPane;
 
@@ -28,8 +27,10 @@ public class Steuerung implements KeyListener{
 	
     public void actionPerformed (ActionEvent ae){
         if(ae.getSource() == spiel.getStarteSpiel()){
-        	spiel.getText().setText("adad");
+        	//spiel.getText().setText("adad");
         	JOptionPane.showMessageDialog(null,"setText");
+//        	spiel.getText().setText("adad");
+
         }
         }
 	

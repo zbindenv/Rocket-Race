@@ -3,11 +3,10 @@ package net.ictcampus.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import net.ictcampus.view.Spielfeld;
+
 
 public class ButtonListener implements ActionListener{
 
@@ -21,8 +20,12 @@ public class ButtonListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JOptionPane.showMessageDialog(null,"Klickt");
-		spiel.getText().setText(spiel.getG().timer+"");	
+		//spiel.getText().setText(spiel.getG().timer+"");	
 		
+		
+		spiel.setGestartet(true);
+		spiel.repaint();
+
 	}
 	
 	
