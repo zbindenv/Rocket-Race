@@ -2,6 +2,7 @@ package net.ictcampus.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,9 +38,12 @@ public class Spielfeld extends JFrame {
 	private Rakete r1=new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
-	public Hindernis s1 = new Hindernis(3, 300 , 0);
-	public boolean gestartet = true;
-	
+	public Hindernis s1 = new Hindernis(23, 100 , -220);
+	public Hindernis s2 = new Hindernis(3, 400 , -100);
+	public Hindernis s3 = new Hindernis(3, 600 , -400);
+	public Hindernis s4 = new Hindernis(3, 200 , -0);
+	public ArrayList<Hindernis> hindernisse = new ArrayList<>();
+	public boolean gestartet = false;
 	
 	
 
@@ -61,7 +65,11 @@ public class Spielfeld extends JFrame {
 
 		r1.setxPos(270);							//Rakete bekommt Startkoordinaten
 		r1.setyPos(480);	
-		ff =  new Flugfeld(r1,s1);					//ein neues Flugfeld mit einem Hindernis und einer Rakete werden erstellt
+		hindernisse.add(s1);
+		hindernisse.add(s2);
+		hindernisse.add(s3);
+		hindernisse.add(s4);
+		ff =  new Flugfeld(r1,hindernisse);			//ein neues Flugfeld mit einem Hindernis und einer Rakete werden erstellt
 		ff.setLayout(new GridLayout());				//Das Flugfeld bekommt ein Layout
 		Steuerung ki = new Steuerung(this,r1);		//Steuerung
         addKeyListener(ki);
@@ -83,12 +91,11 @@ public class Spielfeld extends JFrame {
 		feld.g.counter(1);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		Game g = new Game(feld.r1,feld.ff,feld);
-		//while(!feld.gestartet) {
-		//	System.out.println("");
-		//}
+		while(!feld.gestartet) {
+			System.out.println("");
+		}
 		
-		HindernisseFallen f = new HindernisseFallen(g,feld.gestartet,feld.r1,feld.ff,feld);
+		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld);
 		f.start();
 	}
 	

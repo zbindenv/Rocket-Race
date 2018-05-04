@@ -1,5 +1,6 @@
 package net.ictcampus.control;
 
+import net.ictcampus.model.Hindernis;
 import net.ictcampus.model.Rakete;
 import net.ictcampus.view.Flugfeld;
 import net.ictcampus.view.Spielfeld;
@@ -21,9 +22,13 @@ public class HindernisseFallen extends Thread{
 			while(spiel) {
 				
 				
-				System.out.println("power");
+				System.out.print("power");
 				
-				g.s.s1.setyPos(g.s.s1.getyPos()+10);
+				for(Hindernis h : g.s.hindernisse) {
+					h.setyPos(h.getyPos()+10);
+					
+					move(h, s);
+				}
 				
 				
 				
@@ -51,6 +56,7 @@ public class HindernisseFallen extends Thread{
 					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
+					
 				}
 				
 				
@@ -58,6 +64,37 @@ public class HindernisseFallen extends Thread{
 				
 				
 		}
+	}
+	
+	public void move(Hindernis h, Spielfeld sf) {
+		int randomZahl1;
+		int randomZahl2;
+		
+		randomZahl1 = (int) (Math.random()*-600 - h.getHeight());
+		randomZahl2 = (int) (Math.random()*550);
+		System.out.println(h.getxPos());
+		if (h.getyPos() > sf.getHeight()) {
+			h.setxPos(randomZahl2);
+			h.setyPos(randomZahl1);
+			h.repaint();
+		}
+		
+		
+		
+		
+		
+		/*int randomZahl1;
+		int randomZahl2;
+		
+		randomZahl1 = (int) (Math.random()*25);
+		randomZahl2 = (int) (Math.random()*600);
+		
+		sf.hindernisse.add (new Hindernis(randomZahl1, randomZahl2, 0));
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
 	}
 	
 	public void run() {

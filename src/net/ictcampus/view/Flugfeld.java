@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -16,13 +17,14 @@ public class Flugfeld extends JPanel{
 	private BufferedImage image;
 	private Rakete rakete;
 	private Hindernis hindernis;
+	private ArrayList<Hindernis> hindernisse;
 	
 	//Konstruktor
-	public Flugfeld(Rakete r, Hindernis s) {
+	public Flugfeld(Rakete r, ArrayList<Hindernis> s) {
 	    rakete = r;
-		hindernis = s;
+		hindernisse = s;
 		try {
-	          image = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
+	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
 	       } catch (IOException ex) {
 	            System.out.println(ex.getMessage());
 	       }
@@ -33,9 +35,12 @@ public class Flugfeld extends JPanel{
 
 		g.drawImage(image,0,0,null); 														//Zeichnet HinterGrundbild
 		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),null); 			//Zeichnet Rakete
-		g.drawImage(hindernis.getHindernis(),hindernis.getxPos(),hindernis.getyPos(),null);
-		repaint();
-
+		
+		for(int i = 0; i < hindernisse.size();i++) {
+			
+			g.drawImage(hindernisse.get(i).getHindernis(),hindernisse.get(i).getxPos(),hindernisse.get(i).getyPos(),null);
+			repaint();
+		}
 	}	
 	//Getters Setters
 	public Rakete getRakete() {

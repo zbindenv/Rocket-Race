@@ -23,7 +23,7 @@ public class Rakete extends JPanel{
 
 	//fügt das Bild ein, wenn die URL stimmt, sonst wird die Errormessage ausgegeben	
 	try {                
-        rocket = ImageIO.read(new File("C:/RocketRace/src/net/ictcampus/view/rakete.png"));
+        rocket = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/rakete.png"));
      } catch (IOException ex) {
           System.out.println(ex.getMessage());
      }
