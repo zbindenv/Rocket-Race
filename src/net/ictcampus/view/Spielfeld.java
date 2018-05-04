@@ -34,10 +34,10 @@ public class Spielfeld extends JFrame {
 	}
 
 
-	private Rakete r1=new Rakete(1,50,50);
+	private Rakete r1=new Rakete(1,50,50,48,251);
 	public boolean left = false;
 	public boolean right = false;
-	public Hindernis s1 = new Hindernis(3, 300 , 0);
+	public Hindernis s1 = new Hindernis(22, 300 , 0 ,0 ,0);
 	public boolean gestartet = true;
 	
 	
@@ -83,12 +83,11 @@ public class Spielfeld extends JFrame {
 		feld.g.counter(1);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		Game g = new Game(feld.r1,feld.ff,feld);
 		//while(!feld.gestartet) {
 		//	System.out.println("");
 		//}
 		
-		HindernisseFallen f = new HindernisseFallen(g,feld.gestartet,feld.r1,feld.ff,feld);
+		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld, feld.s1);
 		f.start();
 	}
 	
@@ -122,8 +121,8 @@ public class Spielfeld extends JFrame {
 		this.r1 = r1;
 	}
 
-	public String getText() {
-		return text.getText();
+	public JLabel getText() {
+		return text;
 	}
 	
 	

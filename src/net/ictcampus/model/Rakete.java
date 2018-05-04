@@ -1,6 +1,7 @@
 package net.ictcampus.model;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,13 +14,17 @@ public class Rakete extends JPanel{
 	private int speed;
 	private int xPos;
 	private int yPos;
+	private int breite;
+	private int höhe;
 	private BufferedImage rocket;
 
 	//Konstruktor
-	public Rakete(int speed, int xPos, int yPos){
+	public Rakete(int speed, int xPos, int yPos,int breite, int höhe){
 	this.speed = speed;
 	this.xPos = xPos;
 	this.yPos = yPos;
+	this.breite=breite;
+	this.höhe=höhe;
 
 	//fügt das Bild ein, wenn die URL stimmt, sonst wird die Errormessage ausgegeben	
 	try {                
@@ -28,6 +33,11 @@ public class Rakete extends JPanel{
           System.out.println(ex.getMessage());
      }
 		
+	}
+	
+	
+	public Rectangle getHitbox() {
+		return new Rectangle(xPos, yPos, getBreite(),getHöhe());
 	}
 
 	//Bild wird hinzugefügt
@@ -67,5 +77,21 @@ public class Rakete extends JPanel{
 
 	public void setRocket(BufferedImage rocket) {
 		this.rocket = rocket;
+	}
+
+	public int getHöhe() {
+		return höhe;
+	}
+
+	public void setHöhe(int height) {
+		this.höhe = height;
+	}
+
+	public int getBreite() {
+		return breite;
+	}
+
+	public void setBreite(int width) {
+		this.breite = width;
 	}
 }

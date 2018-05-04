@@ -12,10 +12,14 @@ public class Game {
 	// Instanzvariabeln definieren
 	private int zaehleScore;
 	int timer;
+	
+
 	Rakete rakete;
 	Flugfeld flug;
 	Spielfeld s;
-
+	int punkte=0;
+	Timer timerA;
+	
 	// Konstruktor
 	public Game(Rakete r1, Flugfeld ff, Spielfeld spiel) {
 
@@ -28,24 +32,30 @@ public class Game {
 	int zaehler = 10;
 
 	public void counter(int zaehler) {
-		timer = zaehler;
+	//	timer = zaehler;
 		System.out.println("adwad");
 
-		Timer TimerA = new Timer();
-		TimerTask TaskA = new TimerTask() {
+		timerA = new Timer();
+		TimerTask taskA = new TimerTask() {
 
 			public void run() {
 				if (timer >= 0) {
-					System.out.println("" + timer);
-					timer++;
+					//System.out.println("" + timer);
+					punkte=timer;
+					timer +=1;
 				}
 				if (timer == 100) {
 					System.out.println("Aktion");
-					TimerA.cancel();
+					punkte=timer;
+					//TimerA.cancel();
 				}
 			}
 		};
-		TimerA.schedule(TaskA, 0, 2000);
+		timerA.schedule(taskA, 0, 1000);
+	}
+	
+	public void cancleTimer() {
+		timerA.cancel();
 	}
 
 	// Zählt die Punkte
@@ -82,5 +92,12 @@ public class Game {
 				}
 			}
 		}
+	}
+	public int getTimer() {
+		return timer;
+	}
+
+	public void setTimer(int timer) {
+		this.timer = timer;
 	}
 }

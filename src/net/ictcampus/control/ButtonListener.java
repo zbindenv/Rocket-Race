@@ -20,9 +20,7 @@ public class ButtonListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JOptionPane.showMessageDialog(null,"Klickt");
-		//spiel.getText().setText(spiel.getG().timer+"");	
-		
-		
+		spiel.getG().counter(0);
 		spiel.setGestartet(true);
 		spiel.repaint();
 

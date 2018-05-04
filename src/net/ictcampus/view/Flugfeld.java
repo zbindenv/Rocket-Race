@@ -32,7 +32,7 @@ public class Flugfeld extends JPanel{
 		super.paintComponent(g);
 
 		g.drawImage(image,0,0,null); 														//Zeichnet HinterGrundbild
-		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),null); 			//Zeichnet Rakete
+		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),rakete.getBreite(),rakete.getHöhe(),null); 			//Zeichnet Rakete
 		g.drawImage(hindernis.getHindernis(),hindernis.getxPos(),hindernis.getyPos(),null);
 		repaint();
 
