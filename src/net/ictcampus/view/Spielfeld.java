@@ -24,7 +24,16 @@ public class Spielfeld extends JFrame {
 	private JButton starteSpiel = new JButton("Start");
 	private JLabel text = new JLabel();
 	private JLabel text2 = new JLabel("Rocket Race");
-	
+	private Game g;
+	public Game getG() {
+		return g;
+	}
+
+	public void setG(Game g) {
+		this.g = g;
+	}
+
+
 	private Rakete r1=new Rakete(1,50,50);
 	public boolean left = false;
 	public boolean right = false;
@@ -65,10 +74,10 @@ public class Spielfeld extends JFrame {
 	
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
-		Game g = new Game(feld.r1,feld.ff,feld);
+		feld.g = new Game(feld.r1,feld.ff,feld);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
-		g.play();	
+		feld.g.counter(1);
 	}
 	
 	//Getters und Setters
