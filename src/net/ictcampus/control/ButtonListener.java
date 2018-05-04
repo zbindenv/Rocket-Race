@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import net.ictcampus.view.Spielfeld;
 
+
 public class ButtonListener implements ActionListener{
 
 	Spielfeld spiel;
@@ -18,6 +19,8 @@ public class ButtonListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null,"Klickt");
+		
+		spiel.setGestartet(true);
+		spiel.repaint();
 	}
 }

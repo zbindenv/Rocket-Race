@@ -29,10 +29,11 @@ public class Spielfeld extends JFrame {
 	public boolean left = false;
 	public boolean right = false;
 	public Hindernis s1 = new Hindernis(3, 300 , 0);
+	public boolean gestartet = true;
 	
 	
 	
-	
+
 	//Konstruktor
 	public Spielfeld() {
 		super("Rocket Race");
@@ -70,7 +71,11 @@ public class Spielfeld extends JFrame {
 		feld.setSize(600, 800);
 		feld.setVisible(true);
 		Game g = new Game(feld.r1,feld.ff,feld);
-		HindernisseFallen f = new HindernisseFallen(g, true,feld.r1,feld.ff,feld);
+		//while(!feld.gestartet) {
+		//	System.out.println("");
+		//}
+		
+		HindernisseFallen f = new HindernisseFallen(g,feld.gestartet,feld.r1,feld.ff,feld);
 		f.start();
 	}
 	
@@ -122,6 +127,9 @@ public class Spielfeld extends JFrame {
 		this.starteSpiel = starteSpiel;
 	}
 	
+	public void setGestartet(boolean gestartet) {
+		this.gestartet = gestartet;
+	}
 
 		
 		

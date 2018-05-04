@@ -24,7 +24,9 @@ public class HindernisseFallen extends Thread{
 				System.out.println("power");
 				
 				g.s.s1.setyPos(g.s.s1.getyPos()+10);
-
+				
+				
+				
 				if(s.left) {
 					if(rakete.getxPos() >= 3) {
 						rakete.setxPos(rakete.getxPos() -15);
