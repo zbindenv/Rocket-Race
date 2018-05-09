@@ -11,9 +11,11 @@ import net.ictcampus.view.Spielfeld;
 
 public class Steuerung implements KeyListener{
 	
+	//Instanzvariabeln
 	Spielfeld spiel;
 	Rakete r;
 	
+	//Konstruktor
 	public Steuerung(Spielfeld s,Rakete r) {
 		this.r=r;
 		spiel = s;
@@ -21,18 +23,7 @@ public class Steuerung implements KeyListener{
 
 	}
 
-	public Steuerung(Spielfeld spiel) {
-		this.spiel= spiel;
-	}
-	
-    public void actionPerformed (ActionEvent ae){
-        if(ae.getSource() == spiel.getStarteSpiel()){
-        	
-        	JOptionPane.showMessageDialog(null,"setText");
-
-        }
-        }
-	
+	//Schaut ob die rechte oder linke PFeiltaste gedrückt wurde und gibt true bei der jeweiligen Taste zurück
 	public void keyPressed(KeyEvent e) {
 	    
 	    if (e.getKeyCode() == KeyEvent.VK_LEFT){

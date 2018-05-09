@@ -21,10 +21,10 @@ public class ButtonListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 
 		
-		spiel.getStarteSpiel().setFocusable(false);
-		spiel.setFocusable(true);
+		spiel.getStarteSpiel().setFocusable(false);		//Der Button wird nicht fokussiert
+		spiel.setFocusable(true);						//Das Spielfeld wird fokussiert
 		
-		spiel.getG().counter(1);
+		spiel.getG().counter(1);						//der Counter wird 
 		
 		spiel.setGestartet(true);
 		spiel.repaint();

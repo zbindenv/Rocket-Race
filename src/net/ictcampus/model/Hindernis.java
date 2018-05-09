@@ -37,7 +37,7 @@ public class Hindernis extends JPanel{
 			try {       
 					this.breite = 50;
 					this.höhe = 185;
-		          stone = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/stone.png"));
+		          stone = ImageIO.read(new File("stone.png"));
 
 		       } catch (IOException ex) {
 		            System.out.println(ex.getMessage());
@@ -50,7 +50,7 @@ public class Hindernis extends JPanel{
 			try {     
 				this.breite = 100;
 				this.höhe = 86;
-		          stone = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/satellite.png"));
+		          stone = ImageIO.read(new File("satellite.png"));
 
 		       } catch (IOException ex) {
 		            System.out.println(ex.getMessage());
@@ -60,13 +60,10 @@ public class Hindernis extends JPanel{
 	public Rectangle getHitbox() {
 		return new Rectangle(xPos, yPos, getBreite(),getHöhe());
 	}
-	
-	public boolean checkCollision(Rakete r, Game g) {
-		if(( this.getHitbox()).intersects(r.getHitbox())) {
-			JOptionPane.showMessageDialog(null,"Sie sind " +(g.getTimer()*7.9)+" km weit geflogen.","Sie haben Leider verloren",JOptionPane.OK_OPTION);
-			JOptionPane.showMessageDialog(null,"Diese Kilometerzahl resultiert aus den Sekunden, welche sie geflogen sind und der Geschwindigkeit welche eine Rakete mindestens erreichen muss um von der Erde abheben zu können.(7.9 km/s)\"","Sie haben Leider verloren",JOptionPane.OK_OPTION);
-			System.out.println("Sie sind " +(g.getTimer()*7.9)+" km weit geflogen.");
-			System.out.println("Diese Kilometerzahl resultiert aus den Sekunden, welche sie geflogen sind und der Geschwindigkeit welche eine Rakete mindestens erreichen muss um von der Erde abheben zu können.(7.9 km/s)");
+	//Diese Klasse überprüft ob ein Hindernis mit der Rakete zusammenstösst
+	public boolean checkCollision(Rakete r, Game g) {		
+		if(( this.getHitbox()).intersects(r.getHitbox())) {						//schaut ob die Hitbox der Rakete mit der Hitbox des Obkjets zusammenstösse
+			
 			return true;
 		}
 		return false;

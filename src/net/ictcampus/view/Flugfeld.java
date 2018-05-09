@@ -24,7 +24,7 @@ public class Flugfeld extends JPanel{
 	    rakete = r;
 		hindernisse = s;
 		try {
-	          image = ImageIO.read(new File("C:/Users/weilenmannj/RocketRace/Rocket-Race/src/net/ictcampus/view/finalback.png"));	//Bild wird einegelesen
+	          image = ImageIO.read(new File("finalback.png"));	//Bild wird einegelesen
 	       } catch (IOException ex) {
 	            System.out.println(ex.getMessage());
 	       }
@@ -35,7 +35,8 @@ public class Flugfeld extends JPanel{
 
 		g.drawImage(image,0,0,null); 														//Zeichnet HinterGrundbild
 		g.drawImage(rakete.getRocket(),rakete.getxPos(),rakete.getyPos(),rakete.getBreite(),rakete.getHöhe(),null); 	//Zeichnet Rakete
-		for(int i = 0; i < hindernisse.size();i++) {
+		
+		for(int i = 0; i < hindernisse.size();i++) {																		//Zeichnet so viele Hindernisse wie im Array sind an ihren angegebenen Positionen
 			
 			g.drawImage(hindernisse.get(i).getHindernis(),hindernisse.get(i).getxPos(),hindernisse.get(i).getyPos(),null);
 			repaint();

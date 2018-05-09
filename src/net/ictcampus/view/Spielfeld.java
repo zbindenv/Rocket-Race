@@ -34,18 +34,19 @@ public class Spielfeld extends JFrame {
 		this.g = g;
 	}
 
-
+	//Rakete wird kreiert mit Speed, Position, und grösse
 	private Rakete r1=new Rakete(15,50,50,48,176);
 	public boolean left = false;
 	public boolean right = false;
-
-	public Hindernis s1 = new Hindernis(23, 30 , -85-50,0,0);
-	public Hindernis s2 = new Hindernis(3, 140 , -185-600,0,0);
+	
+	//neue Hindernisse mit Startpositionen werden erstellt
+	public Hindernis s1 = new Hindernis(23, 30 , -135,0,0);
+	public Hindernis s2 = new Hindernis(3, 140 , -785,0,0);
 	public Hindernis s3 = new Hindernis(3, 300 , -185,0,0);
-	public Hindernis s4 = new Hindernis(3, 500 , -185-200,0,0);
-	public Hindernis s5 = new Hindernis(23, 390, -85-400,0,0);
-	public ArrayList<Hindernis> hindernisse = new ArrayList<>();
-	public boolean gestartet = false;
+	public Hindernis s4 = new Hindernis(3, 500 , -385,0,0);
+	public Hindernis s5 = new Hindernis(23, 390, -485,0,0);
+	public ArrayList<Hindernis> hindernisse = new ArrayList<>();	//Das HindernisArray wird erstellt
+	public boolean gestartet = false;								//gestartet wird auf false initialisiert
 
 	
 	
@@ -68,7 +69,7 @@ public class Spielfeld extends JFrame {
 
 		r1.setxPos(270);							//Rakete bekommt Startkoordinaten
 		r1.setyPos(560);	
-		hindernisse.add(s1);
+		hindernisse.add(s1);						//neue Hindernisse werden ins Array gespeichert
 		hindernisse.add(s2);
 		hindernisse.add(s3);
 		hindernisse.add(s4);
@@ -84,12 +85,10 @@ public class Spielfeld extends JFrame {
 		
 		
 	}
-
+	//Spiel wird zusammengesetzt und gestartet wenn der Button geklickt weird.
 	public static void main(String[]args) {
 		Spielfeld feld = new Spielfeld();
 		feld.g = new Game(feld.r1,feld.ff,feld);
-		feld.setSize(600, 800);
-		feld.setVisible(true);
 		feld.setSize(600, 800);
 		feld.setVisible(true);
 
@@ -97,8 +96,8 @@ public class Spielfeld extends JFrame {
 			System.out.print("");
 		}
 		
-		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld);
-		f.start();
+		HindernisseFallen f = new HindernisseFallen(feld.g,feld.gestartet,feld.r1,feld.ff,feld);	//Das Spiel wird mit einem kreiert
+		f.start();																					//Das Spiel wird gestartet
 	}
 	
 	//Getters und Setters
@@ -151,8 +150,5 @@ public class Spielfeld extends JFrame {
 	
 	public void setGestartet(boolean gestartet) {
 		this.gestartet = gestartet;
-	}
-
-		
-		
+	}	
 }

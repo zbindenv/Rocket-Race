@@ -28,13 +28,11 @@ public class Game {
 		s = spiel;
 	}
 
-	// Zählt die Punkte
-	int zaehler = 10;
-
+	// Zählt die Sekunden, wie lange schon geflogen wird
 	public void counter(int zaehler) {
-	//	timer = zaehler;
 
-		timerA = new Timer();
+
+		timerA = new Timer();							
 		TimerTask taskA = new TimerTask() {
 
 			public void run() {
