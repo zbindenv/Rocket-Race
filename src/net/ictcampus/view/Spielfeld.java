@@ -35,7 +35,7 @@ public class Spielfeld extends JFrame {
 	}
 
 
-	private Rakete r1=new Rakete(15,50,50,48,251);
+	private Rakete r1=new Rakete(15,50,50,48,176);
 	public boolean left = false;
 	public boolean right = false;
 
@@ -67,7 +67,7 @@ public class Spielfeld extends JFrame {
 		add(navigation, BorderLayout.SOUTH);		//Die Navigation wird auf das Spielfeld gesetzt(im süden)
 
 		r1.setxPos(270);							//Rakete bekommt Startkoordinaten
-		r1.setyPos(480);	
+		r1.setyPos(560);	
 		hindernisse.add(s1);
 		hindernisse.add(s2);
 		hindernisse.add(s3);
